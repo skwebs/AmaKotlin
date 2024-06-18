@@ -86,13 +86,9 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatDelegate
 import java.io.File
 import java.io.IOException
-import java.io.UnsupportedEncodingException
-import java.security.InvalidAlgorithmParameterException
-import java.security.InvalidKeyException
 import java.security.NoSuchAlgorithmException
 import java.security.SecureRandom
 import java.security.spec.InvalidKeySpecException
-import java.security.spec.InvalidParameterSpecException
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.crypto.*
@@ -140,14 +136,14 @@ class MainActivity : Activity() {
 
 
         //request for show website
-        requestForWebview()
+        requestForWebView()
 
         btnTryAgain.setOnClickListener {
             mWebView.visibility = View.GONE
             prgs.visibility = View.VISIBLE
             layoutSplash.visibility = View.VISIBLE
             layoutNoInternet.visibility = View.GONE
-            requestForWebview()
+            requestForWebView()
         }
 
         /** If you want to show adMob */
@@ -169,7 +165,7 @@ class MainActivity : Activity() {
     }
 
 
-    private fun requestForWebview() {
+    private fun requestForWebView() {
 
         if (!mLoaded) {
             requestWebView()
@@ -189,7 +185,6 @@ class MainActivity : Activity() {
     }
 
     @SuppressLint("SetJavaScriptEnabled")
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private fun requestWebView() {
         /** Layout of webview screen View  */
         if (internetCheck(mContext)) {
@@ -221,11 +216,12 @@ class MainActivity : Activity() {
         // this force use chromeWebClient
         mWebView.settings.setSupportMultipleWindows(false)
         mWebView.webViewClient = object : WebViewClient() {
+            @Deprecated("Deprecated in Java")
             override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
 
                 Log.d(TAG, "URL: " + url!!)
                 if (internetCheck(mContext)) {
-                    // If you wnat to open url inside then use
+                    // If you want to open url inside then use
                     view.loadUrl(url);
 
                     // if you wanna open outside of app
@@ -323,12 +319,10 @@ class MainActivity : Activity() {
                 val contentSelectionIntent = Intent(Intent.ACTION_GET_CONTENT)
                 contentSelectionIntent.addCategory(Intent.CATEGORY_OPENABLE)
                 contentSelectionIntent.type = "image/*"
-
-                val intentArray: Array<Intent?>
-                if (takePictureIntent != null) {
-                    intentArray = arrayOf(takePictureIntent)
+                val intentArray: Array<Intent?> = if (takePictureIntent != null) {
+                    arrayOf(takePictureIntent)
                 } else {
-                    intentArray = arrayOfNulls(0)
+                    arrayOfNulls(0)
                 }
 
                 val chooserIntent = Intent(Intent.ACTION_CHOOSER)
@@ -534,12 +528,10 @@ class MainActivity : Activity() {
             val connectivity = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
             val networkInfo = connectivity.allNetworkInfo
-            if (networkInfo != null) {
-                for (i in networkInfo.indices) {
-                    if (networkInfo[i].state == NetworkInfo.State.CONNECTED) {
-                        available = true
-                        break
-                    }
+            for (i in networkInfo.indices) {
+                if (networkInfo[i].state == NetworkInfo.State.CONNECTED) {
+                    available = true
+                    break
                 }
             }
             return available

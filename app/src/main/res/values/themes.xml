@@ -3,6 +3,22 @@
     <style name="Base.Theme.AmaKotlin" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
          <item name="colorPrimary">@color/teal</item>
+
+<!--        <item name="colorPrimaryVariant">@color/primaryColorVariant</item>-->
+<!--        <item name="colorOnPrimary">@color/onPrimaryColor</item>-->
+<!--        &lt;!&ndash; Secondary brand color. &ndash;&gt;-->
+<!--        <item name="colorSecondary">@color/secondaryColor</item>-->
+<!--        <item name="colorSecondaryVariant">@color/secondaryColorVariant</item>-->
+<!--        <item name="colorOnSecondary">@color/onSecondaryColor</item>-->
+<!--        &lt;!&ndash; Background color. &ndash;&gt;-->
+<!--        <item name="android:colorBackground">@color/backgroundColor</item>-->
+<!--        <item name="colorOnBackground">@color/onBackgroundColor</item>-->
+<!--        &lt;!&ndash; Surface color. &ndash;&gt;-->
+<!--        <item name="colorSurface">@color/surfaceColor</item>-->
+<!--        <item name="colorOnSurface">@color/onSurfaceColor</item>-->
+<!--        &lt;!&ndash; Error color. &ndash;&gt;-->
+<!--        <item name="colorError">@color/errorColor</item>-->
+<!--        <item name="colorOnError">@color/onErrorColor</item>-->
     </style>
 
     <style name="Theme.AmaKotlin" parent="Base.Theme.AmaKotlin" />
