@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Ama Kotlin</string>
+    <string name="made_with">Made with</string>
+    <string name="footer_icon">Footer Icon</string>
+    <string name="anshu_memorial_academy">Anshu Memorial Academy</string>
+    <string name="whoops">Whoops!</string>
+    <string name="no_internet_found_ncheck_your_connection_or_try_again">No internet found. \nCheck your connection or try again</string>
+    <string name="try_again">Try Again</string>
 </resources>

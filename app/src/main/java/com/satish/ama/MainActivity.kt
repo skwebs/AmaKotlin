@@ -129,10 +129,10 @@ class MainActivity : Activity() {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
 
         mContext = this
-        mWebView = findViewById<View>(R.id.webview) as WebView
+        mWebView = findViewById<View>(R.id.webView) as WebView
         prgs = findViewById<View>(R.id.progressBar) as ProgressBar
         btnTryAgain = findViewById<View>(R.id.btn_try_again) as Button
-        viewSplash = findViewById(R.id.view_splash) as View
+        viewSplash = findViewById<View>(R.id.view_splash)!!
         layoutWebview = findViewById<View>(R.id.layout_webView) as RelativeLayout
         layoutNoInternet = findViewById<View>(R.id.layout_no_internet) as RelativeLayout
         /** Layout of Splash screen View  */

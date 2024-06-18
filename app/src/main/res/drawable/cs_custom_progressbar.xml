@@ -5,7 +5,7 @@
             <corners android:radius="5dip" />
             <gradient
                 android:startColor="@android:color/background_light"
-                android:centerColor="@color/design_default_color_secondary_variant"
+                android:centerColor="@color/design_default_color_primary"
                 android:centerY="0.75"
                 android:endColor="?attr/actionMenuTextColor"
                 android:angle="270"
@@ -18,10 +18,10 @@
             <shape>
                 <corners android:radius="5dip" />
                 <gradient
-                    android:startColor="@color/design_default_color_primary_variant"
-                    android:centerColor="@color/design_default_color_on_primary"
+                    android:startColor="@color/design_default_color_primary"
+                    android:centerColor="@color/design_default_color_primary"
                     android:centerY="0.75"
-                    android:endColor="@color/design_default_color_on_primary"
+                    android:endColor="@color/design_default_color_primary"
                     android:angle="270"
                     />
             </shape>
